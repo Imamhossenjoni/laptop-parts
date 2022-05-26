@@ -1,0 +1,47 @@
+[
+    {
+        "name":"KeyBoard",
+        "img":"https://i.ibb.co/Snd9qH3/keyboard.jpg",
+        "price":450,
+        "available":10000,
+        "discriptiom":"",
+        "order":1000,
+        "id":1
+    },
+    {
+        "name":"Mouse",
+        "img":"https://i.ibb.co/P9B6qXw/mouse.jpg",
+        "price":350,
+        "available":15000,
+        "discriptiom":"",
+        "order":1000,
+        "id":2
+    },
+    {
+        "name":"Pen Drive",
+        "img":"https://i.ibb.co/L8c2Jfc/pendrive.jpg",
+        "price":500,
+        "available":10000,
+        "discriptiom":"",
+        "order":1000,
+        "id":3
+    },
+    {
+        "name":"Charger Adavter",
+        "img":"https://i.ibb.co/gtMPBG2/laptop-charger-adapter.jpg",
+        "price":450,
+        "available":10000,
+        "discriptiom":"",
+        "order":1000,
+        "id":4
+    },
+    {
+        "name":"Hard Drive",
+        "img":"https://i.ibb.co/yy25yg8/hard-drive.jpg",
+        "price":2000,
+        "available":5000,
+        "discriptiom":"",
+        "order":1000,
+        "id":5
+    }
+]
