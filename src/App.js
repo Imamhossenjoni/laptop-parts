@@ -18,6 +18,7 @@ import Users from './Pages/DashBoard/Users';
 import RequireAdmin from './Pages/Login/RequireAdmin';
 import AddParts from './Pages/DashBoard/AddParts';
 import ManageParts from './Pages/DashBoard/ManageParts';
+import Payment from './Pages/DashBoard/Payment';
 function App() {
   return (
     <div className="App">
@@ -39,6 +40,7 @@ function App() {
         }>
           <Route index element={<MyOrder></MyOrder>}></Route>
           <Route path='review' element={<AddReview></AddReview>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='users' element={
             <RequireAdmin>
               <Users></Users>
@@ -47,7 +49,7 @@ function App() {
             <RequireAdmin>
               <AddParts></AddParts>
             </RequireAdmin>}></Route>
-          <Route path='manage' element={
+          <Route path='manage/:id' element={
             <RequireAdmin>
               <ManageParts></ManageParts>
             </RequireAdmin>}></Route>
