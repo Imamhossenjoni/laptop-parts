@@ -15,6 +15,7 @@ const BookingModal = ({ part, setPart }) => {
         const email = user?.email;
         const phone = event.target?.phone?.value;
         const address = event.target?.address?.value;
+        const totalPrice=order*price;
         const booking = {
             partId: _id,
             part: name,
@@ -24,6 +25,7 @@ const BookingModal = ({ part, setPart }) => {
             address: address,
             user:user?.displayName,
             price:price,
+            totalPrice:totalPrice
         }
         fetch('https://floating-atoll-49766.herokuapp.com/booking', {
             method: 'POST',
