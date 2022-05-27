@@ -3,8 +3,10 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useAdmin from '../../hooks/useAdmin';
 
 const Navbar = () => {
+    const [admin]=useAdmin(true);
     const [user] = useAuthState(auth);
     const logOut = () => {
         signOut(auth);

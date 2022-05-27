@@ -4,13 +4,13 @@ import UserRow from './UserRow';
 // import Loading from '../Shared/Loading';
 
 const Users = () => {
-    // const {data:users,isLoading}=useQuery('users',()=>{fetch('http://localhost:5000/user').then(res=>res.json())})
+    // const {data:users,isLoading}=useQuery('users',()=>{fetch('https://floating-atoll-49766.herokuapp.com/user').then(res=>res.json())})
     // if(isLoading){
     //     return <Loading></Loading>
     // }
     const [users, setUsers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/user',{
+        fetch('https://floating-atoll-49766.herokuapp.com/user',{
             method:'GET',
             headers:{
                 authorization:`Bearer ${localStorage.getItem('accessToken')}`

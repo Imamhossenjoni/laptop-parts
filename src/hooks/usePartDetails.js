@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const usePartDetails = partId => {
     const [product, setProduct] = useState({});
     useEffect(() => {
-        const url = `http://localhost:5000/parts/${partId}`
+        const url = `https://floating-atoll-49766.herokuapp.com/parts/${partId}`
         fetch(url)
             .then(res => res.json())
             .then(data => {

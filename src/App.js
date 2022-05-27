@@ -16,6 +16,8 @@ import AddReview from './Pages/DashBoard/AddReview';
 import Footer from './Pages/Shared/Footer';
 import Users from './Pages/DashBoard/Users';
 import RequireAdmin from './Pages/Login/RequireAdmin';
+import AddParts from './Pages/DashBoard/AddParts';
+import ManageParts from './Pages/DashBoard/ManageParts';
 function App() {
   return (
     <div className="App">
@@ -40,6 +42,14 @@ function App() {
           <Route path='users' element={
             <RequireAdmin>
               <Users></Users>
+            </RequireAdmin>}></Route>
+          <Route path='addParts' element={
+            <RequireAdmin>
+              <AddParts></AddParts>
+            </RequireAdmin>}></Route>
+          <Route path='manage' element={
+            <RequireAdmin>
+              <ManageParts></ManageParts>
             </RequireAdmin>}></Route>
         </Route>
 

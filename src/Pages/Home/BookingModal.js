@@ -25,7 +25,7 @@ const BookingModal = ({ part, setPart }) => {
             user:user?.displayName,
             price:price,
         }
-        fetch('http://localhost:5000/booking', {
+        fetch('https://floating-atoll-49766.herokuapp.com/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
