@@ -1,16 +1,23 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const AddReview = () => {
+    const [user]=useAuthState(auth);
     const handleSubmit=event=>{
         event.preventDefault();
-        const review=event.target.review.value;
-        console.log(review);
+        const customerReview=event.target.review.value;
+        const review={
+            customerReview,
+            name:user.displayName,
+            date:Date.now(),
+        }
         fetch('https://floating-atoll-49766.herokuapp.com/review',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
             },
-            body:JSON.stringify({review:review})
+            body:JSON.stringify(review)
         })
         .then(res=>res.json())
         .then(data=>console.log(data))
