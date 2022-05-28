@@ -9,13 +9,13 @@ import HomeLogin from './HomeLogin';
 
 const Home = () => {
     return (
-        <div>
+        <div className='px-10'>
             <Banner></Banner>
             <Parts></Parts>
             <Summary></Summary>
             <Review></Review>
             <HomeLogin></HomeLogin>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </div>
     );
 };
