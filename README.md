@@ -1,6 +1,6 @@
 # Client Side GitHub Link: https://github.com/programming-hero-web-course1/manufacturer-website-client-side-Imamhossenjoni
 # Server Side GitHub Link: https://github.com/programming-hero-web-course1/manufacturer-website-server-side-Imamhossenjoni
-# Live Watch Link:
+# Live Watch Link: https://laptop-parts-gallary.web.app/
 
 - This is laptop parts gallary
 - I insert some product and details in this projects

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Part = ({ part,setPart}) => {
-    const { _id,price, name, order, img, available } = part;
+    const { _id,price, name, order, img, available,discriptiom } = part;
     const navigate = useNavigate();
     // const handleManage = id => {
     //     navigate(`/parts/${id}`)
@@ -18,7 +18,7 @@ const Part = ({ part,setPart}) => {
                 <p className='text-sm'>Price:{price}</p>
                 <p className='text-sm'>Available:{available}</p>
                 <p className='text-sm'>Minimum Order:{order}</p>
-                <p className='text-sm'>Discription:</p>
+                <p className='text-sm'>Discription:{discriptiom}</p>
                 {/* <div class="card-actions">
                       <label for="booking-modal" className="btn btn-primary" onClick={()=>setPart(part)}>Book Now</label> 
                 </div> */}
