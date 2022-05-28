@@ -26,7 +26,6 @@ const Summary = () => {
                     <div class="stat-title text-2xl">Tools</div>
                     <div class="stat-value">50+</div>
                 </div>
-
             </div>
         </div>
     );

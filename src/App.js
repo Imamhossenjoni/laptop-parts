@@ -21,6 +21,7 @@ import ManageParts from './Pages/DashBoard/ManageParts';
 import Payment from './Pages/DashBoard/Payment';
 import Blog from './Pages/Blog';
 import NotFound from './Pages/Shared/NotFound';
+import Contact from './Pages/Contact';
 function App() {
   return (
     <div className="App">
@@ -28,6 +29,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/contact' element={<Contact></Contact>}></Route>
         <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signUp' element={<Registration></Registration>}></Route>
