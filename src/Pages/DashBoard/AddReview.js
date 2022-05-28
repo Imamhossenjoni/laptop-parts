@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const AddReview = () => {
@@ -10,7 +11,6 @@ const AddReview = () => {
         const review={
             customerReview,
             name:user.displayName,
-            date:Date.now(),
         }
         fetch('https://floating-atoll-49766.herokuapp.com/review',{
             method:'POST',
@@ -20,11 +20,14 @@ const AddReview = () => {
             body:JSON.stringify(review)
         })
         .then(res=>res.json())
-        .then(data=>console.log(data))
+        .then(data=>{
+            console.log(data);
+            toast('Thanks for your comments.');
+        });
     }
     return (
         <div>
-            <h1 className='text-2xl text-bold text-accent '>Please Give your Review:</h1>
+            <h1 className='text-2xl text-bold text-accent'>Please Give your Review:</h1>
             <form onSubmit={handleSubmit}>
                 <div>
                 <textarea style={{width:"550px",textAlign:"center"}} className='border-2 w-84' name='review'placeholder='Write Your Review'></textarea>
