@@ -19,6 +19,7 @@ import RequireAdmin from './Pages/Login/RequireAdmin';
 import AddParts from './Pages/DashBoard/AddParts';
 import ManageParts from './Pages/DashBoard/ManageParts';
 import Payment from './Pages/DashBoard/Payment';
+import Blog from './Pages/Blog';
 function App() {
   return (
     <div className="App">
@@ -26,6 +27,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signUp' element={<Registration></Registration>}></Route>
         <Route path='/orderPage' element={
