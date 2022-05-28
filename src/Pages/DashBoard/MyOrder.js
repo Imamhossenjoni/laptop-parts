@@ -35,7 +35,7 @@ const MyOrder = () => {
   }, [user])
   return (
     <div>
-      <h2>This is ordre pages:{orders?.length}</h2>
+      <h2 className='text-primary text-center text-2xl text-bold'>Your Total Order :{orders?.length}</h2>
       <div class="overflow-x-auto">
         <table class="table table-zebra w-full">
           <thead>
@@ -53,7 +53,7 @@ const MyOrder = () => {
           </thead>
           <tbody>
             {
-              orders?.map((order, index) => <tr>
+              orders?.map((order, index) => <tr key={index}>
                 <th>{index + 1}</th>
                 <td>{order?.user}</td>
                 <td>{order?.part}</td>
@@ -64,7 +64,10 @@ const MyOrder = () => {
                     (order.totalPrice && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs button-success'>Pay</button></Link>
                   }
                   {
-                    (order.totalPrice && order.paid) && <span className='text-success'>Paid</span>
+                    (order.totalPrice && order.paid) && <div>
+                      <p><span className='text-success'>Paid</span></p>
+                      <p>transactionId<span className='text-success'>{order?.transactionId}</span></p>
+                    </div>
                   }
                   </td>
                 <td>{order.email}</td>

@@ -10,10 +10,10 @@ const CheckoutForm = ({ order }) => {
     const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState('');
 
-    const { _id, price,totalPrice, user,name } = order;
+    const { _id, price,totalPrice, user,name,email } = order;
 
     useEffect(() => {
-        fetch('https://secret-dusk-46242.herokuapp.com/create-payment-intent', {
+        fetch('https://floating-atoll-49766.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -28,7 +28,7 @@ const CheckoutForm = ({ order }) => {
                 }
             });
 
-    }, [price])
+    }, [totalPrice])
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -58,8 +58,8 @@ const CheckoutForm = ({ order }) => {
                 payment_method: {
                     card: card,
                     billing_details: {
-                        // name: patientName,
-                        // email: patient
+                        name:user,
+                        email:email
                     },
                 },
             },
@@ -80,7 +80,7 @@ const CheckoutForm = ({ order }) => {
                 appointment: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://secret-dusk-46242.herokuapp.com/booking/${_id}`, {
+            fetch(`https://floating-atoll-49766.herokuapp.com/booking/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',
