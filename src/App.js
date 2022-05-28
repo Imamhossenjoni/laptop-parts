@@ -20,6 +20,7 @@ import AddParts from './Pages/DashBoard/AddParts';
 import ManageParts from './Pages/DashBoard/ManageParts';
 import Payment from './Pages/DashBoard/Payment';
 import Blog from './Pages/Blog';
+import NotFound from './Pages/Shared/NotFound';
 function App() {
   return (
     <div className="App">
@@ -63,8 +64,9 @@ function App() {
             <BookingModal></BookingModal>
           </RequireAuth>
         }></Route> */}
-
+      <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <Footer></Footer>
       <ToastContainer></ToastContainer>
     </div>
   );
