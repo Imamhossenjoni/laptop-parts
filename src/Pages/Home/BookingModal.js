@@ -9,6 +9,21 @@ const BookingModal = ({ part, setPart }) => {
     const [user, loading, error] = useAuthState(auth);
     // const [error,setError]=useState('');
     // const [agree,setAgree]=useState(false);
+    const [minimumError,setMinimumError]=useState('');
+    const handleMiniOrder=e=>{
+        console.log(e.target.value);
+        const order=e.target.value;
+        if(order<1000){
+            setMinimumError('You must need to order 1000 or up');
+        }
+        else if(order>available){
+            setMinimumError('Sorry Bro! Your order value has our stock limit.')
+        }
+        else{
+            setMinimumError('');
+        }
+
+    }
     const handleBooking = event => {
         event.preventDefault();
         const order = event.target?.order?.value;
@@ -74,8 +89,8 @@ const BookingModal = ({ part, setPart }) => {
                             <label class="label">
                                 <span class="label-text">Minimum Order:</span>
                             </label>
-                            <input type="text" name='order' placeholder=""  class="input input-bordered w-full max-w-xs" />
-                            {/* <p className='text-red-500'>{error}</p> */}
+                            <input type="text" name='order' onChange={handleMiniOrder} placeholder=""  class="input input-bordered w-full max-w-xs" />
+                            {<p className='text-red-500'>{minimumError}</p>}
                             <label class="label">
                                 <span class="label-text">Email:</span>
                             </label>
@@ -89,7 +104,7 @@ const BookingModal = ({ part, setPart }) => {
                                 <span class="label-text">Address:</span>
                             </label>
                             <input type="text" name='address' placeholder="Enter Your Address" class="input input-bordered w-full max-w-xs" />
-                            <input type="submit" value='Booked' class="btn btn-accent w-full mt-4 max-w-xs" />
+                            <input type="submit" disabled={minimumError} value='Booked' class="btn btn-accent w-full mt-4 max-w-xs" />
                         </div>
                     </form>
                 </div>

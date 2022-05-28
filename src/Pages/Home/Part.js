@@ -10,20 +10,22 @@ const Part = ({ part,setPart}) => {
 
     return (
         <div class="card  bg-base-100 shadow-xl">
-            <figure class="px-10 pt-10">
-                <img style={{height:'250px'}} src={img}  alt="Shoes" class="rounded-xl" />
+            <figure class="px-10 pt-2">
+                <img style={{height:'150px'}} src={img}  alt="Shoes" class="rounded-xl" />
             </figure>
-            <div class="card-body  text-left">
-                <h2 class="card-title text-accent">Name:{name}</h2>
-                <p>Price:{price}</p>
-                <p>Available:{available}</p>
-                <p>Minimum Order:{order}</p>
-                <p>Discription:</p>
+            <div class="card-body  text-center pt-0">
+                <h2 class=" text-2xl text-primary text-center">{name}</h2>
+                <p className='text-sm'>Price:{price}</p>
+                <p className='text-sm'>Available:{available}</p>
+                <p className='text-sm'>Minimum Order:{order}</p>
+                <p className='text-sm'>Discription:</p>
                 {/* <div class="card-actions">
                       <label for="booking-modal" className="btn btn-primary" onClick={()=>setPart(part)}>Book Now</label> 
                 </div> */}
                 {/* <button className='btn btn-primary' onClick={()=>handleManage(_id)}>Details</button> */}
-                <button className='btn '><Link className='text-primary' to="/orderPage">Order Now</Link></button>
+                <div className='flex justify-center text-center'>
+                <button className='btn btn-sm bg-primary text-white w-36'><Link className='' to="/orderPage">Order Now</Link></button>
+                </div>
             </div>
         </div>
     );

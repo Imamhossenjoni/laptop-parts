@@ -8,7 +8,7 @@ const Parts = () => {
     const [parts] = useParts();
     return (
         <div>
-            <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5'>
+            <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-5'>
                 {
                     parts.map(part => <Part key={part.id} part={part} setPart={setPart}></Part>)
                 }
