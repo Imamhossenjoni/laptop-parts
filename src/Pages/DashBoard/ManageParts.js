@@ -1,8 +1,10 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import useParts from '../../hooks/useParts';
 
 const ManageParts = () => {
-    const [parts,setParts]=useParts()
+    const [parts,setParts]=useParts();
+    const {id}=useParams();
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure .?');
         if (proceed) {
@@ -29,7 +31,7 @@ const ManageParts = () => {
                         <p>Price (per unit):{ part?.price}</p>
                         <p>Available Quantity:{ part?.available}</p>
                         <p>Minimum Order:{ part?.order}</p>
-                        <h5><button onClick={() => handleDelete(part._id)} className='btn btn-primary py-2'>Delete</button></h5>
+                        <h5><button onClick={() => handleDelete(part?._id)} className='btn btn-primary py-2'>Delete</button></h5>
                     </div>)
                 }
             </div>

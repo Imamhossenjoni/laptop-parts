@@ -49,10 +49,10 @@ function App() {
             <RequireAdmin>
               <AddParts></AddParts>
             </RequireAdmin>}></Route>
-          <Route path='manage/:id' element={
-            <RequireAdmin>
+          <Route path='manage' element={
+      
               <ManageParts></ManageParts>
-            </RequireAdmin>}></Route>
+         }></Route>
         </Route>
 
         <Route path='/parts/:partId' element={<PartDetails></PartDetails>}></Route>
